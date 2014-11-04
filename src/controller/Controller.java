@@ -1,6 +1,8 @@
 package controller;
-
-
+/**
+ * @author wat wattanagaroon
+ * @version 2014/11/04
+ */
 import java.io.ByteArrayInputStream;
 import java.util.List;
 
@@ -21,13 +23,14 @@ public class Controller {
 	
 	public Controller(){
 		GlobalWeather factory = new GlobalWeather();
-		proxy = factory.getGlobalWeatherSoap();
-
-		
+		proxy = factory.getGlobalWeatherSoap();		
 	}
 	
-	
-	public void Connect(String country){
+	/**
+	 * This connect with soap webservice
+	 * @param country 
+	 */
+	public void connect(String country){
 			itemArray = null;
 			String response = proxy.getCitiesByCountry(country);
 			JAXBContext ctx = null;
@@ -43,7 +46,9 @@ public class Controller {
 			}
 			setListToArray();
 	}
-	
+	/**
+	 * change list of table in xml to array
+	 */
 	public void setListToArray(){
 		List<Table> tableList = newDataSet.getTable();
 

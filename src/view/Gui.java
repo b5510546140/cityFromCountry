@@ -1,9 +1,12 @@
 package view;
-
+/**
+ * 
+ * @author wat wattanagaroon
+ * @version 2014/9/10
+ */
 import javax.swing.JFrame;
 
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -14,8 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JTextPane;
 import javax.swing.SwingWorker;
 
 import controller.Controller;
@@ -24,9 +25,6 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import model.Table;
-
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
-import com.sun.xml.internal.ws.api.streaming.XMLStreamWriterFactory.Default;
 
 import javax.swing.JProgressBar;
 import javax.xml.ws.WebServiceException;
@@ -115,12 +113,16 @@ public class Gui extends JFrame{
 		
 
 	}
-	
+	/**
+	 * If it catch it will come to this method and notify 
+	 */
 	private void NotiEror() {
 		JOptionPane.showMessageDialog(null, "No internet Connection \n ","Error",JOptionPane.ERROR_MESSAGE);
 		setEnabled(false);
 	}
-
+	/**
+	 * result of soap will show
+	 */
 	private void response(){
 		try{
 		tableModel.setRowCount(0);
@@ -154,7 +156,7 @@ public class Gui extends JFrame{
 		@Override
 		protected List<Table> doInBackground() throws Exception {
 			progressBar.setValue(50);
-			controller.Connect(input);
+			controller.connect(input);
 			return null;
 		}
 

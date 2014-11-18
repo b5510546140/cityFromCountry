@@ -43,7 +43,7 @@ public class Gui extends JFrame{
 	private JButton submitButt;
 	
 	public Gui() {
-		super("WWW");
+		super("City and Country");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		try{
@@ -62,7 +62,7 @@ public class Gui extends JFrame{
 		submitButt.setBounds(257, 53, 117, 29);
 		panel.add(submitButt);
 		
-		JLabel lblNewLabel_1 = new JLabel("Some");
+		JLabel lblNewLabel_1 = new JLabel("Country name");
 		lblNewLabel_1.setBounds(110, 0, 166, 34);
 		panel.add(lblNewLabel_1);
 		
@@ -103,7 +103,6 @@ public class Gui extends JFrame{
 					submitButt.setText("Submit");
 					progressBar.setValue(0);
 					work.cancel(true);
-					System.out.println("EIEIEIEEI");
 					isRun = false;
 				}
 			System.out.println(isRun);
